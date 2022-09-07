@@ -2,7 +2,7 @@ version: 2.0
 
 build-docker-image-job: &build-docker-image-job
   docker:
-    - image: cimg/node:18.8.0
+    - image: circleci/node:14.17
   steps:
     - setup_remote_docker:
         version: 19.03.13
@@ -64,7 +64,7 @@ jobs:
       CYPRESS_INSTALL_BINARY: 0
       PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 1
     docker:
-      - image: cimg/node:18.8.0
+      - image: circleci/node:14.17
     steps:
       - checkout
       - run: mkdir -p /tmp/test-results/eslint
@@ -78,7 +78,7 @@ jobs:
       CYPRESS_INSTALL_BINARY: 0
       PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 1
     docker:
-      - image: cimg/node:18.8.0
+      - image: circleci/node:14.17
     steps:
       - checkout
       - run: sudo apt update
@@ -104,7 +104,7 @@ jobs:
       CYPRESS_INSTALL_BINARY: 0
       PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 1
     docker:
-      - image: cimg/node:18.8.0
+      - image: circleci/node:14.17
     steps:
       - setup_remote_docker:
           version: 19.03.13
